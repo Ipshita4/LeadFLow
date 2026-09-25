@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LeadFlow CRM | Smarter Lead Prioritization</title>
+
+    <meta
+        name="description"
+        content="LeadFlow helps sales teams prioritize inbound leads with explainable lead scoring and streamlined follow-up."
+    >
+</head>
+
+<body>
+
+    <header>
+        <h1>Stop guessing which leads to call first.</h1>
+
+        <p>
+            LeadFlow helps sales teams prioritize inbound leads using
+            transparent lead scoring, so the most promising opportunities
+            are easier to identify.
+        </p>
+    </header>
+
+
+    <main>
+
+        <section>
+            <h2>Tell us about your sales process</h2>
+
+            <p>
+                Submit your information below to get started.
+            </p>
+
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+
+
+            <form method="post">
+
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <button type="submit">
+                    Get a free pipeline review
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
